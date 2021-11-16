@@ -24,16 +24,17 @@
 
     <script type="text/javascript">
         // Connection Configs
-        var connection_secret = '1234';
+        var connection_secret = "$ROOT_PASSWD"; // base64 encoded secret
         var ui_subdir = '/ui/';
 
         // Server Configs
         var connection_protocol = window.location.protocol.slice(0, -1);
         var connection_host = window.location.hostname;
         var connection_port = window.location.port | '443';
+        var connection_interface = 'jsonrpc';
 
         // Replace with settings URL
-        var settings_url = `${ui_subdir}#!/settings/rpc/set?protocol=${connection_protocol}&host=${connection_host}&port=${connection_port}&secret=${connection_secret}`;
+        var settings_url = `${ui_subdir}#!/settings/rpc/set/${connection_protocol}/${connection_host}/${connection_port}/${connection_interface}/${connection_secret}`;
         $("a[id='webui_btn']").attr('href', settings_url);
     </script>
 </body>
