@@ -28,7 +28,8 @@
         var ui_subdir = '/ui/';
 
         // Server Configs
-        var connection_protocol = window.location.protocol.slice(0, -1);
+        var connection_protocol = "https"; // https default. 
+        //var connection_protocol = window.location.protocol.slice(0, -1);
         var connection_host = window.location.hostname;
         var connection_port = window.location.port | '443';
         var connection_interface = 'jsonrpc';
